@@ -23,9 +23,11 @@ def get_driver():
     driver.get("http://automated.pythonanywhere.com/")
     return driver
 
+
 def clean_text(text):
     """Extract temperature from text"""
     output = float(text.split(": ")[1])
+    return output
 
 
 def main():
@@ -33,7 +35,7 @@ def main():
     time.sleep(2)
     element = driver.find_element(
         by="xpath", value="/html/body/div[1]/div/h1[2]")
-    return element.text
+    return clean_text(element.text)
 
 
 print(main())
