@@ -23,6 +23,10 @@ def get_driver():
     driver.get("http://automated.pythonanywhere.com/")
     return driver
 
+def clean_text(text):
+    """Extract temperature from text"""
+    output = float(text.split(": ")[1])
+
 
 def main():
     driver = get_driver()
