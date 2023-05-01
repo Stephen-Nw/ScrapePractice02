@@ -26,7 +26,7 @@ def get_driver():
 def main():
     driver = get_driver()
     element = driver.find_element(
-        by="xpath", value="")
+        by="xpath", value="/html/body/div[1]/div/h1[2]")
     return element.text
 
 
